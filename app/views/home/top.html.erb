@@ -1,2 +1,24 @@
-<h1>Home#top</h1>
-<p>Find me in app/views/home/top.html.erb</p>
+
+<%= stylesheet_link_tag 'home' %>
+<%= javascript_include_tag 'home' %>
+<div class="top-wall">
+<div class="container">
+  <p class="notice"><%= notice %></p>
+  <div class="row mt-lg-10 justify-content-center">
+   <div class="content col-lg-5">
+  	<h1 style="color:white;"><strong>Build your basemant!</strong></h1>
+   </div>
+  </div>
+  <div class="row mt-lg-5 justify-content-center">
+    <div class="col-lg-4">
+      <%= link_to 'サインイン', new_user_session_path, class: 'btn btn-lg btn-warning btn-block' %>
+    </div>
+  </div>
+
+  <div class="row my-3 justify-content-center">
+    <div class="col-lg-4">
+      <%= link_to '新規登録', new_user_registration_path, class: 'btn btn-lg  btn-danger btn-block' %>
+    </div>
+  </div>
+</div>
+</div>

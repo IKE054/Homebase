@@ -4,12 +4,19 @@
     <title>Homebase</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <!-- Header Navbar -->
+    <%= render "layouts/navbar" %>
+    <!-- Main Content -->
     <%= yield %>
   </body>
+  <!-- Footer -->
+  <footer class="justify-content-center" id="footer" style="; position: relative;">
+    <p class="text-secondary">© 2019 Copyright Text</p>
+  </footer>
 </html>
