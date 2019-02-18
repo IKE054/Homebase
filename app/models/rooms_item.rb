@@ -1,0 +1,2 @@
+class RoomsItem < ApplicationRecord
+end
