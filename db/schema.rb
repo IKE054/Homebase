@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2019_02_17_084313) do
     t.string "name", null: false
     t.string "introduction"
     t.text "profile_image"
-    t.string "header_image", null: false
+    t.string "header_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

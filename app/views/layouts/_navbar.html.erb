@@ -1,0 +1,68 @@
+<%= stylesheet_link_tag 'navbar' %>
+<%= javascript_include_tag 'navbar' %>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light bd-navbar shadow fixed-top py-1">
+    <a class="navbar-brand mb-0 h1 ml-4" href="<%= root_path %>"><%= image_tag('logo/Homebase/flat.png',  class: 'logo-image') %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ml-5">
+        <% if user_signed_in? then%>
+        <!-- User section -->
+         <!-- Search form -->
+          <%= form_with url: search_index_path, method: :get, local: true, class: "form-inline my-2 my-lg-0" do |f| %>
+          <%= f.select :table_name, [["アイテム", "Item"], ["ユーザー", "User"]], {}, class: "form-control form-control-sm mr-2" %>
+            <%= f.text_field :keyword, palceholder: "search",class: "form-control form-control-sm mr-2", :size =>"100", :placeholder => "検索する" %>
+            <% end %>
+      </ul>
+      <ul class="navbar-nav ml-5">
+          <li class="nav-item">
+            <%= link_to user_path(current_user.id), method: :get, class: 'nav-link' do %>
+              <div class="icon" href="javascript:void(0);" id="popover" data-toggle="popover" data-placement="top" title="マイページ">
+                <%= attachment_image_tag current_user, :profile_image, :fill, 200, 200, :size => "40x40", fallback: "no-user-image.jpg" %>
+              </div>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <div class="icon">
+             <i class="fas fa-bars menu__icon"></i>
+            </div>
+          </li>
+        </ul>
+        <!-- sidebar -->
+           <aside class="sidebar">
+            <div class="sidebar__inner">
+             <h2 class="sidebar__ttl">Menu</h2>
+             <i class="fas fa-times-circle sidebar__icon"></i>
+            </div>
+             <p class="sidebar__txt"><%= link_to destroy_user_session_path, method: :delete, class: 'nav-link' do %>
+                <i class="fas fa-sign-out-alt fa-lg" ></i>logout
+            <% end %></p>
+           </aside>
+          <!--  未ログイン -->
+        <% else %>
+
+      </ul>
+        <ul class="navbar-nav ml-5">
+          <li class="nav-item" >
+            <a class="nav-link " href="<%= new_user_session_path %>">
+              <div class="icon" href="javascript:void(0);" id="popover" data-toggle="popover" data-placement="top" title="ログインする">
+                <i class="fas fa-sign-in-alt fa-lg"></i>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_user_registration_path %>">
+              <div class="icon" href="javascript:void(0);" id="popover" data-toggle="popover" data-placement="top" title="新規登録">
+                <i class="fas fa-user-plus fa-lg"></i>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

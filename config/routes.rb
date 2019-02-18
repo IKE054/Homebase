@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   # get 'items/update'
   # get 'items/create'
   # get 'items/new'
-  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # home
@@ -34,6 +33,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   # items
   resources :items, only: [:new, :create, :show, :edit, :update]
-
+  # search
+  get 'search', to: 'search#index', as: :search_index
 
 end
