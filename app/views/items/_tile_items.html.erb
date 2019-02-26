@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'tile' %>
+<div class="container-fluid my-2">
+   <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 280, "fitWidth": true, "gutter": 25 }'>
+    <% items.each do |i| %>
+      <div class="grid-item" >
+        <%= link_to item_path(i.id), method: :get do %>
+       <p class="image"><%= attachment_image_tag i, :item_image, width: 280,  fallback: 'wallpaper/thom-holmes-556804-unsplash.jpg', class: "item " %></p>
+       <% end %>
+       <p class="caption">最近はやりのやつ
+        <a href="<%= i.url %>"></a>
+        <div class="menu">
+         <i class="fas fa-ellipsis-h"></i>
+        </div>
+       </p>
+      </div>
+    <% end %>
+          <div class="grid-item">
+      <div class="movie-flame">
+      <iframe width="565" height="280" src="https://www.youtube.com/embed/A9sOb_r6Hy0" frameborder="100" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="item"></iframe>
+      </div>
+      <p class="caption" >
+        <a >uu</a>
+        <i class="fas fa-ellipsis-h"></i>
+       </p>
+      </div>
+   </div>
+  </div>
+</div>
