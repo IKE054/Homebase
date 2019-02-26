@@ -1,2 +1,42 @@
-<h1>Items#new</h1>
-<p>Find me in app/views/items/new.html.erb</p>
+<%= stylesheet_link_tag 'items' %>
+<%= javascript_include_tag 'items' %>
+<div class="container" >
+  <div class="row justify-content-md-center mb-lg-5">
+    <div class="col-md-9 mx-auto" >
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="row justify-content-md-center">
+        <h2>アイテムを投稿</h2>
+      </div>
+      	<!-- tab -->
+	   <div class="p-3">
+  		 <!-- タブボタン部分 -->
+ 		 <ul class="nav nav-tabs justify-content-md-center">
+    	  <li class="nav-item">
+      	   <a href="#tab1" class="nav-link active" data-toggle="tab"><i class="far fa-image"></i></a>
+    	  </li>
+    	  <li class="nav-item">
+      		<a href="#tab2" class="nav-link" data-toggle="tab"><i class="fab fa-youtube"></i></a>
+    	  </li>
+    	  <li class="nav-item">
+      		<a href="#tab3" class="nav-link" data-toggle="tab"><i class="fas fa-images"></i></i></a>
+    	  </li>
+  		 </ul>
+
+  		 <!--タブのコンテンツ部分-->
+  		 <div class="tab-content">
+    	  <div id="tab1" class="tab-pane active">
+	 	   <%= render "items/post_image", item: @item %>
+    	  </div>
+    	  <div id="tab2" class="tab-pane">
+      	   <%= render "items/post_movie", item: @item %>
+    	  </div>
+    	  <div id="tab3" class="tab-pane">
+      	   <%= render "items/post_images", item: @item %>
+    	  </div>
+  	     </div>
+	  </div>
+    </div>
+  </div>
+</div>
+

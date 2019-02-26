@@ -1,0 +1,8 @@
+  <span>
+    <%= f.text_field :tag_title, placeholder: "タグを入力", class: "form-control" %>
+  </span>
+  <span><%= link_to_remove_association 'remove', f, class: "btn" %>
+  </span>
+  <% f.text_field :tag_type_id, :value => 1, class: "form-control" %>
+
+

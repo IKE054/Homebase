@@ -1,0 +1,11 @@
+  <%= form_for item, html: {class:'dropzone', id: "item-dropzone"} do |i| %>
+    <div class=" needsclick" style="background-color: orange">
+      <h3>Drop file here</h3> or
+      <strong>Click</strong> to upload
+    </div>
+    <div class="fallback">
+      <%= i.file_field :item_image %>
+      <%= i.submit 'upload the image' %>
+    </div>
+  <% end %>
+</div>

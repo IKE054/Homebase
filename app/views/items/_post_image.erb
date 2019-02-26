@@ -1,0 +1,45 @@
+<!-- movie post -->
+<!-- Form section -->
+<%= form_for item, url: items_path do |f| %>
+<!-- Error messages -->
+<div class="row form" >
+  <div class="col-md-4 offset-1" >
+    <div class="form-group">
+      <%= f.attachment_field :item_image, placeholder: "item_image" %>
+    </div>
+  <div class="form-group">
+   <%= f.text_field :url, class: "form-control", placeholder: "URLを入力" %>
+ </div>
+</div>
+
+<div class="col-md-6 my-3" >
+  <div class="form-group">
+   <%= f.text_field :title, class: "form-control", placeholder: "タイトルを設定" %>
+ </div>
+ <div class="form-group">
+   <%= f.text_area :caption, class: "form-control", placeholder: "紹介文を追加" %>
+ </div>
+
+ <div class="form-group">
+   <%= f.hidden_field :category, value: '1' %>
+ </div>
+
+ <div class="nested-fields" id="tags">
+  <%= f.fields_for :tags do |g| %>
+  <%= render "item_tag_fields", f: g %>
+  <% end %>
+</div>
+<div class="link">
+ <%= link_to_add_association 'タグを追加', f, :tags,
+ class: "btn btn-defalt ",
+  data: {
+    association_insertion_node: "#tags",
+    association_insertion_method: "append"
+  }%>
+</div>
+</div>
+</div>
+<div class="row form-action offset-4 my-5 col-md-4">
+  <%= f.submit "投稿する", class: "btn btn-lg btn-warning btn-block" %>
+</div>
+<% end %>
