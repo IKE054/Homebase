@@ -10,8 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require dropzone/basic
+ *= require dropzone/dropzone
 
  *= require_self
+
  */
 
 @import "bootstrap";
@@ -31,4 +34,7 @@ body {
 
 html, body{
   height: 100%;
+}
+.user-image{
+	border-radius: 50%;
 }
