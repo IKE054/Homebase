@@ -1,2 +1,36 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<main class="container">
+  <br>
+  <div class="row my-lg-3">
+    <div class="col-md"></div>
+    <div class="col-md-10">
+      <h1>User edit</h1>
+      <!-- Form section -->
+      
+      <%= form_for(@user) do |f| %>
+        <div class="form-group">
+          <%= f.label :name %><br>
+          <%= f.text_field :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :introduction %><br>
+          <%= f.text_area :introduction %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %><br>
+          <%= f.text_field :email %>
+        </div>
+        <div class="form-group">
+          <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: "jpg", :size => "100x100", fallback: "no-user-image.jpg" %>
+          <%= f.label :profile_image %><br>
+          <%= f.attachment_field :profile_image, placeholder: "profile_image" %>
+        </div>
+        <div class="form-action">
+          <%= f.submit "Update Profile", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md"></div>
+  </div>
+  <br>
+  <br>
+</main>

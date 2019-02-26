@@ -1,3 +1,32 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// .item{
+//   background-color: gray;
+//     border-radius: 8px;
+//   background-color: #d3d3d3;
+//   border-style: hidden;
+//   height: 80%;
+// }
+
+// .grid-item{
+//   border-radius: 8px;
+// }
+
+.user-header{
+	height: 40%;
+	position: relative;
+}
+
+.profile{
+	position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.user-nav {
+	overflow: scroll;
+	// border: 2px solid #ccc;
+}
+

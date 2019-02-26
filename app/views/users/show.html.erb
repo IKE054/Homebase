@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= stylesheet_link_tag 'users' %>
+<%= stylesheet_link_tag 'tile' %>
+<%= javascript_include_tag 'users' %>
+<div class="container-fluid mt-3 user-header" style="background-color: green">
+	<div class="profile">
+	<%= attachment_image_tag current_user, :profile_image, :fill, 200, 200, :size => "200x200", fallback: "no-user-image.jpg",class: 'user-image' %>
+	</div>
+</div>
+
+<nav class="user-nav navbar navbar-expand-lg navbar-light bg-light bd-navbar shadow  py-1">
+	<div class="rooms collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ml-5">
+            <li class="nav-item">
+              <%= link_to new_item_path, method: :get, class: 'nav-link' do %>
+                <i class="fas fa-plus"></i>
+              </div>
+              <% end %>
+            </li>
+      </ul>
+	</div>
+</nav>
+
+<div class="">
+  <h2>Recentry Additions</h2>
+</div>
+<div>
+<%= render "items/tile_items", items: @items %>
+</div>
