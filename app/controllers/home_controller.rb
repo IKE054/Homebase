@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def index
+  	@items = Item.all
   end
 end
