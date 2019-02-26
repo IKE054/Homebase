@@ -22,3 +22,12 @@ User.create(
     },
    ]
 )
+
+Item.create(
+  [
+    {
+      :user_id => '1',
+      :category => '1',
+    },
+  ]
+)

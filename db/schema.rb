@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 2019_02_17_084313) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "title", null: false
-    t.string "caption", null: false
+    t.integer "user_id"
+    t.string "title"
+    t.string "caption"
     t.string "category", null: false
-    t.string "url", null: false
+    t.string "item_image_id"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -76,14 +76,13 @@ ActiveRecord::Schema.define(version: 2019_02_17_084313) do
     t.datetime "updated_at", null: false
     t.string "name", null: false
     t.string "introduction"
-    t.text "profile_image"
-    t.string "header_image"
+    t.string "profile_image_id"
+    t.string "header_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "follows", "items"
-  add_foreign_key "items", "users"
   add_foreign_key "rooms", "users"
   add_foreign_key "rooms_items", "items"
   add_foreign_key "rooms_items", "rooms"
