@@ -1,2 +1,19 @@
-<h1>Rooms#new</h1>
-<p>Find me in app/views/rooms/new.html.erb</p>
+<div class="container mt-5">
+ <div class="row offset-4 col-md-5 form-group">
+  <p><h1>ルームを作成する</h1></p>
+ </div>
+ <%= form_for @room, url: rooms_path do |f| %>
+
+  <div class="form-group offset-3 col-md-6 ">
+   <%= attachment_image_tag @room, :room_image, :fill, 100, 100, format: "jpg", :size => "100x100", fallback: "wallpaper/thom-holmes-556804-unsplash.jpg" %>
+   <%= f.attachment_field :room_image, placeholder: "profile_image" %>
+  </div>
+
+  <div class="form-group offset-3 col-md-6 ">
+   <%= f.text_field :room_name, class: "form-control", placeholder: "ルーム名を入力" %>
+  </div>
+  <div class="row form-action offset-4 col-md-4 form-group">
+   <%= f.submit "ルームを作成する", class: "btn btn-lg btn-warning btn-block" %>
+  </div>
+ <% end %>
+</div>
