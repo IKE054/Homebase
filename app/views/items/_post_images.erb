@@ -1,8 +1,7 @@
-<div>
+<div class="mt-3">
   <%= form_for item, html: {class:'dropzone', id: "item-dropzone"} do |f| %>
     <div class="dz-message needsclick">
-      <h3>Drop file here</h3> or
-      <strong>Click</strong> to upload
+      ドラッグ&ドロップで画像をアップロード
     </div>
     <div class="fallback">
       <%= f.attachment_field :item_image, class: "form-file-input", placeholder: "item_image" %>

@@ -11,7 +11,7 @@ $(function(){
     maxFilesize: 2,
     addRemoveLinks: true,
     dictRemoveFile:'削除',
-    paramName: 'item[item_image_id]',
+    paramName: 'item[item_image]',
     success: function(file, response){
 			$(file.previewElement).find('.dz-remove').attr('id',response.itemId);
 			$(file.previewElement).addClass('dz-success');
