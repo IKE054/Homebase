@@ -20,16 +20,18 @@
         <td><strong><%= @item.title %></strong></td>
       </tr>
       <tr>
-        <th scope="row">説明文</th>
+        <th>説明文</th>
         <td><%= @item.caption %></td>
       </tr>
       <tr>
-        <th scope="row">URL</th>
+        <th>URL</th>
         <td><%= @item.url %></td>
       </tr>
     </tbody>
   </table>
-  jjjj
+  <div class="row">
+   <%= link_to "削除", item_path(@item.id), method: :delete, class: "btn btn-danger" %><br>
+  </div>
   </div>
  </div>
 </div>

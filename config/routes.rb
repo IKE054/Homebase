@@ -32,8 +32,10 @@ Rails.application.routes.draw do
   # users
   resources :users, only: [:show, :edit, :update]
   # items
-  resources :items, only: [:new, :create, :show, :edit, :update]
+  resources :items, only: [:new, :create, :show, :edit, :update, :destroy]
   # search
   get 'search', to: 'search#index', as: :search_index
+  # rooms
+  resources :rooms, only: [:new, :create, :show, :edit, :update]
 
 end

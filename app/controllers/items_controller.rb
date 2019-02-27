@@ -32,6 +32,12 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to user_path
+  end
+
   private
   # def item_params
   #   params.require(:item).permit(
