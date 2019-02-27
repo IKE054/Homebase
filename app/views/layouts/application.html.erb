@@ -4,7 +4,12 @@
     <title>Homebase</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <!-- js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +19,11 @@
     <%= render "layouts/navbar" %>
     <!-- Main Content -->
     <%= yield %>
+
+
   </body>
   <!-- Footer -->
-  <footer class="justify-content-center" id="footer" style="; position: relative;">
+  <footer class="justify-content-center fixed-bottom" id="footer" style="; position: relative;">
     <p class="text-secondary">© 2019 Copyright Text</p>
   </footer>
 </html>
