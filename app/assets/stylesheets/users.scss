@@ -14,10 +14,10 @@
 //   border-radius: 8px;
 // }
 
-.user-header{
-	height: 40%;
-	position: relative;
-}
+// .user-header{
+// 	height: 60%;
+// 	position: relative;
+// }
 
 .profile{
 	position: absolute;
@@ -26,7 +26,26 @@
 }
 
 .user-nav {
-	overflow: scroll;
 	// border: 2px solid #ccc;
+}
+
+// .rooms {
+// 	overflow: scroll;
+// }
+
+.swiper-container {
+  height: 50%;
+  // background-color: #d3d3d3;
+}
+
+.swiper-wrapper{
+   max-width: 50%;
+}
+.room-image{
+  max-width: 100%;
+  max-height: 35%;
+  background-color: #d3d3d3;
+  border-style: hidden;
+  border-radius: 8px;
 }
 

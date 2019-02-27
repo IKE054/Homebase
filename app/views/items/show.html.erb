@@ -1,2 +1,35 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<%= stylesheet_link_tag 'items' %>
+<div class="container mt-5">
+ <div class="row mt-5">
+  <!-- 画像 -->
+  <div class="image-box col-md-6">
+  	<!-- 画像 -->
+  	<%= attachment_image_tag @item, :item_image, width: 450, fallback: 'wallpaper/thom-holmes-556804-unsplash.jpg',  class: "room-image" %>
+
+  	<!-- リンク画像 -->
+
+  	<!-- 動画 -->
+  </div>
+
+  <!-- タイトル・説明文 -->
+  <div class="col-md-6 mt-4">
+   <table class="table table-borderless ">
+    <tbody>
+      <tr>
+        <th>タイトル</th>
+        <td><strong><%= @item.title %></strong></td>
+      </tr>
+      <tr>
+        <th scope="row">説明文</th>
+        <td><%= @item.caption %></td>
+      </tr>
+      <tr>
+        <th scope="row">URL</th>
+        <td><%= @item.url %></td>
+      </tr>
+    </tbody>
+  </table>
+  jjjj
+  </div>
+ </div>
+</div>
