@@ -1,5 +1,4 @@
 class Tag < ApplicationRecord
-	belongs_to :items
-	belongs_to :users
+	belongs_to :item
 	validates :name, presence: true
 end

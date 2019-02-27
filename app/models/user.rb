@@ -7,6 +7,5 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :rooms, dependent: :destroy
   has_many :follows, dependent: :destroy
-  has_many :tags
   attachment :profile_image
 end

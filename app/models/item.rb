@@ -5,17 +5,17 @@ class Item < ApplicationRecord
 	has_many :rooms_items
 	has_many :tags, dependent: :destroy
 
-	accepts_nested_attributes_for :tags, allow_destroy: true
+	accepts_nested_attributes_for :tags, reject_if: :all_blank, allow_destroy: true
 	# mount_uploader :item_image, ImagesUploader
 	attachment :item_image
 
 	  # Search method
-  def self.search(keyword)
-    if keyword
-      relation = Item.joins(:tag)
-      relation.merge(Tag.where(['tag_title LIKE ?', "%#{keyword}%"])).or(relation.where(['item_name LIKE ?', "%#{keyword}%"]))
+  def self.get_movie(ky)
+    if ky
+      str = 'https://www.youtube.com/embed/' << ky
     else
-      Item.all
+      str = ''
     end
+    return str
   end
 end
